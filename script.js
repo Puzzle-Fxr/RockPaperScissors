@@ -21,7 +21,7 @@ function playRound (playerSelection, computerSelection){
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         return "You Lose! Scissors cuts paper into pieces!";
     } else if (playerSelection === computerSelection) {
-        return "Its a Draw! Play again?"
+        return "Its a tie!";
     } else return "Wrong cast, please type 'rock', 'paper' or 'scissors'.";
 }
 
@@ -39,7 +39,7 @@ function game(){
 
     for(var i=0; i<5; i++){
         let computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection)
+        console.log(playRound(playerSelection, computerSelection));
         if (playRound(playerSelection, computerSelection) === "You Win! Scissors cuts paper into pieces!"){
             playerWin ++;
         } else if (playRound(playerSelection, computerSelection) === "You Win! Rock smashes scissors into pieces!"){
@@ -54,10 +54,9 @@ function game(){
             pcWin ++;
         } else tie ++;
     }
-
-    console.log(playerWin);
-    console.log(pcWin);
-    console.log(tie);
+    console.log("Wins: "+ playerWin);
+    console.log("Loses: "+ pcWin);
+    console.log("Ties:"+ tie);
 
     if (playerWin > pcWin){
         return "You Win in a best of 5!";
