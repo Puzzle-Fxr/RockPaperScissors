@@ -25,43 +25,11 @@ function playRound (playerSelection, computerSelection){
     } else return "Wrong cast, please type 'rock', 'paper' or 'scissors'.";
 }
 
-let playerChoice = prompt("Type 'Rock', 'Paper' or 'Scissors'.");
-let playerSelection = playerChoice.toLowerCase();
-/*let computerSelection = getComputerChoice();*/
+const score = document.querySelector('#score');
 
-/*console.log (playRound(playerSelection, computerSelection));*/
+let computerSelection = getComputerChoice();
+let playerSelection = document.querySelectorAll('.btn');
+playerSelection.forEach((btn)=> btn.addEventListener('click', ()=> {
+    score.textContent = (playRound(btn.id, computerSelection));
+}));
 
-
-function game(){
-    let playerWin = 0;
-    let pcWin = 0;
-    let tie = 0;
-
-    for(var i=0; i<5; i++){
-        let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-        if (playRound(playerSelection, computerSelection) === "You Win! Scissors cuts paper into pieces!"){
-            playerWin ++;
-        } else if (playRound(playerSelection, computerSelection) === "You Win! Rock smashes scissors into pieces!"){
-            playerWin ++;
-        } else if (playRound(playerSelection, computerSelection) === "You Win! Paper wraps rock into submission!"){
-            playerWin ++;
-        } else if (playRound(playerSelection, computerSelection) === "You Lose! Rock smashes scissors into pieces!"){
-            pcWin ++;
-        } else if (playRound(playerSelection, computerSelection) === "You Lose! Paper wraps rock into submission!"){
-            pcWin ++;
-        } else if (playRound(playerSelection, computerSelection) === "You Lose! Scissors cuts paper into pieces!"){
-            pcWin ++;
-        } else tie ++;
-    }
-    console.log("Wins: "+ playerWin);
-    console.log("Loses: "+ pcWin);
-    console.log("Ties:"+ tie);
-
-    if (playerWin > pcWin){
-        return "You Win in a best of 5!";
-    } else if (playerWin < pcWin){
-        return "You Lose in a best of 5!";
-    } else return "You tied the best of 5!";
-}
-console.log(game());
