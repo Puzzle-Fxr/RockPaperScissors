@@ -25,11 +25,14 @@ function playRound (playerSelection, computerSelection){
     } else return "Wrong cast, please type 'rock', 'paper' or 'scissors'.";
 }
 
+let playerWin = 0;
+let pcWin = 0;
+let draw = 0;
+
 const score = document.querySelector('#score');
 
-let computerSelection = getComputerChoice();
 let playerSelection = document.querySelectorAll('.btn');
 playerSelection.forEach((btn)=> btn.addEventListener('click', ()=> {
-    score.textContent = (playRound(btn.id, computerSelection));
+    score.textContent = playRound(btn.id, getComputerChoice());
 }));
 
