@@ -25,11 +25,23 @@ let playerWin = 0;
 let pcWin = 0;
 let draw = 0;
 
+const replay = document.getElementById('playAgain');
+replay.addEventListener('click', ()=>{
+    window.location.reload();
+})
+
+const full = document.getElementById('fullscreen-container');
+
+
 function declareWin (){
     if (playerWin === 5){
-        console.log("it works");
+        let congrats = document.querySelector('.finalMsg');
+        congrats.textContent = 'Congratulations! You Win!';
+        full.style.visibility = 'visible';
     } else  if (pcWin === 5){
-        console.log("losing sucks");
+        let congrats = document.querySelector('.finalMsg');
+        congrats.textContent = 'Too bad! You Lost!';
+        full.style.visibility = 'visible';
     };
 };
 
