@@ -3,12 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Lumanosimo|Audiowide&effect=outline">
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script> 
     </head>
     <body>
-        <h1>Rock Papper Scissors</h1>
-        <h2 class="intro">Can you win in a best of 5?</h2>
+        <h1 class="font-effect-outline">Rock Papper Scissors</h1>
+        <h2 class="intro">A game as old as time. Three choices,<br>
+            Four outcomes. Can you win in a best of Five?
+        </h2>
         <div class="icons">
             <img class="icn" src="./rps_ui_images/a_rock_1.jpg" alt="An image of a rock">
             <img class="icn" src="./rps_ui_images/a_piece_of_white_paper_1.jpg" alt="An image of a peice of paper">
@@ -20,13 +23,15 @@
             <button class="btn" id="scissors">Scissors</button>
         </div>
         <div class="outcome">
-            <div class="visual">
-                <img class="vis" id="visOne" src="./rps_ui_images/a_rock_breaking_a_pair_of_scissors_1.jpg">
-                <img class="vis" id="visTwo" src="./rps_ui_images/pair_of_scissors_cutting_paper_1.jpg">
-                <img class="vis" id="visThree" src="./rps_ui_images/a_piece_of_paper_wrapped_around_a_rock_0.jpg">
-                <img class="vis" id="visFour" src="./rps_ui_images/Luna_tie.jpg">
-                
+            <div class="visContainer">
+                <div class="visual">
+                    <img class="vis" id="visOne" src="./rps_ui_images/a_rock_breaking_a_pair_of_scissors_1.jpg">
+                    <img class="vis" id="visTwo" src="./rps_ui_images/pair_of_scissors_cutting_paper_1.jpg">
+                    <img class="vis" id="visThree" src="./rps_ui_images/a_piece_of_paper_wrapped_around_a_rock_0.jpg">
+                    <img class="vis" id="visFour" src="./rps_ui_images/Luna_tie.jpg">
+                </div>
             </div>
+
             <div class="result">
                 <h2 class="scoreTitle">Score Board</h2>
                 <div class="count" id="playerWins">Player Wins = 0</div>
@@ -38,7 +43,7 @@
         <div id="fullscreen-container">
             <div id="pop">
                 <div class = "finalMsg"></div>
-                <button class="btn" id="playAgain">Play Again</button>            
+                <button id="playAgain">Play Again</button>            
             </div>
         </div>
     </body>
